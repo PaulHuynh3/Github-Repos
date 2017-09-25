@@ -45,14 +45,23 @@
         }
         
         //if we reach this point we have successfully received the api from json
+        //we create a mutableArray inside to hold the json data
+        NSMutableArray *infoRepoNameArray = [[NSMutableArray alloc]init];
+        
         for (NSDictionary *repo in repos){
             NSString *repoName = repo[@"name"];
             NSLog(@"repo name: %@",repoName);
+            [infoRepoNameArray addObject:repo[@"name"]];
         }
+        // even though we're inside this "frozen" block of code that isn't being run until later, inside of NSURLSession things
+        // we can still access outside variables like `self`
+        //access our array outside to hold the json data array.
+        self.repoNameArray = [NSArray arrayWithArray:infoRepoNameArray];
         
+        //this is the main thread.
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            
-            
+            [self.tableView reloadData];
+        
             
         }];
         
@@ -65,13 +74,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 1;
+    return self.repoNameArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    RepoNameTableViewCell *repoNameTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    return repoNameTableViewCell;
+    RepoNameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    [cell configureWithRepoName:self.repoNameArray[indexPath.row]];
+    
+    return cell;
 }
 
 
