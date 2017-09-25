@@ -10,6 +10,8 @@
 #import "RepoNameTableViewCell.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *headerLabel;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* repoNameArray;
 
@@ -55,13 +57,14 @@
         }
         // even though we're inside this "frozen" block of code that isn't being run until later, inside of NSURLSession things
         // we can still access outside variables like `self`
-        //access our array outside to hold the json data array.
+        //access our array outside to display the json data array.
         self.repoNameArray = [NSArray arrayWithArray:infoRepoNameArray];
         
         //this is the main thread.
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            //have to put reload data for the names pulling from json to display.
             [self.tableView reloadData];
-        
+            self.headerLabel.text = [NSString stringWithFormat:@"Number of repos: %lu",self.repoNameArray.count];
             
         }];
         
