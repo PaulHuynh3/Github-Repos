@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "RepoNameTableViewCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray* repoNameArray;
 
 @end
 
@@ -47,6 +50,12 @@
             NSLog(@"repo name: %@",repoName);
         }
         
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            
+            
+            
+        }];
+        
     }];
     
     //The data task is created in a suspended state so we need to resume it
@@ -54,11 +63,17 @@
     
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 1;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    RepoNameTableViewCell *repoNameTableViewCell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    return repoNameTableViewCell;
+}
+
 
 
 @end

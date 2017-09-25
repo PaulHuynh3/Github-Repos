@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA3A11181F796331002DA18A /* RepoNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3A11171F796331002DA18A /* RepoNameTableViewCell.m */; };
 		DAF350631F795DC4004CEE76 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF350621F795DC4004CEE76 /* main.m */; };
 		DAF350661F795DC4004CEE76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF350651F795DC4004CEE76 /* AppDelegate.m */; };
 		DAF350691F795DC4004CEE76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF350681F795DC4004CEE76 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA3A11161F796331002DA18A /* RepoNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoNameTableViewCell.h; sourceTree = "<group>"; };
+		DA3A11171F796331002DA18A /* RepoNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoNameTableViewCell.m; sourceTree = "<group>"; };
 		DAF3505E1F795DC4004CEE76 /* Github Repos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Github Repos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF350621F795DC4004CEE76 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DAF350641F795DC4004CEE76 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,14 +61,11 @@
 		DAF350601F795DC4004CEE76 /* Github Repos */ = {
 			isa = PBXGroup;
 			children = (
-				DAF350641F795DC4004CEE76 /* AppDelegate.h */,
-				DAF350651F795DC4004CEE76 /* AppDelegate.m */,
 				DAF350671F795DC4004CEE76 /* ViewController.h */,
 				DAF350681F795DC4004CEE76 /* ViewController.m */,
+				DA3A11161F796331002DA18A /* RepoNameTableViewCell.h */,
+				DA3A11171F796331002DA18A /* RepoNameTableViewCell.m */,
 				DAF3506A1F795DC4004CEE76 /* Main.storyboard */,
-				DAF3506D1F795DC4004CEE76 /* Assets.xcassets */,
-				DAF3506F1F795DC4004CEE76 /* LaunchScreen.storyboard */,
-				DAF350721F795DC4004CEE76 /* Info.plist */,
 				DAF350611F795DC4004CEE76 /* Supporting Files */,
 			);
 			path = "Github Repos";
@@ -74,6 +74,11 @@
 		DAF350611F795DC4004CEE76 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DAF350641F795DC4004CEE76 /* AppDelegate.h */,
+				DAF350651F795DC4004CEE76 /* AppDelegate.m */,
+				DAF3506D1F795DC4004CEE76 /* Assets.xcassets */,
+				DAF3506F1F795DC4004CEE76 /* LaunchScreen.storyboard */,
+				DAF350721F795DC4004CEE76 /* Info.plist */,
 				DAF350621F795DC4004CEE76 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -150,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3A11181F796331002DA18A /* RepoNameTableViewCell.m in Sources */,
 				DAF350691F795DC4004CEE76 /* ViewController.m in Sources */,
 				DAF350661F795DC4004CEE76 /* AppDelegate.m in Sources */,
 				DAF350631F795DC4004CEE76 /* main.m in Sources */,
@@ -311,6 +317,7 @@
 				DAF350771F795DC4004CEE76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
